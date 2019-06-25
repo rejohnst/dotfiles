@@ -1,0 +1,23 @@
+[user]
+	email = rob.johnston@joyent.com
+	name = Rob Johnston
+[color]
+	ui = auto
+[merge]
+	tool = opendiff
+[alias]
+	# aliases that match the hg in / out commands
+	out      = !git fetch && git log FETCH_HEAD..
+	outgoing = !git fetch && git log FETCH_HEAD..
+	in       = !git fetch && git log ..FETCH_HEAD
+	incoming = !git fetch && git log ..FETCH_HEAD
+	amend    = !git commit --amend --no-edit
+	tip      = !git whatchanged -1
+	manifest = !git ls-tree -r --name-only --full-tree HEAD
+	logl     = !git log --pretty=fuller
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
