@@ -15,6 +15,7 @@
 	tip      = !git whatchanged -1
 	manifest = !git ls-tree -r --name-only --full-tree HEAD
 	logl     = !git log --pretty=fuller
+	bpush    = "!f() { git push origin +HEAD:refs/heads/${1}; }; f"
 
 [filter "lfs"]
 	required = true
