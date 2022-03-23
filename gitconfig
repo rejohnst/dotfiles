@@ -16,6 +16,7 @@
 	manifest = !git ls-tree -r --name-only --full-tree HEAD
 	logl     = !git log --pretty=fuller
 	bpush    = "!f() { git push origin +HEAD:refs/heads/${1}; }; f"
+	patch    = "!f() { git format-patch -o /var/tmp ${1} -1; }; f"
 
 [filter "lfs"]
 	required = true
